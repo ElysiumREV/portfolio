@@ -127,3 +127,13 @@ button:hover, .emailLink:hover {
   opacity: 1;
   visibility: visible;
 }
+
+ul {
+  list-style: none;         /* Remove a bolinha padrão */
+  padding: 10px;
+}
+
+li::before {
+  content: "▸ ";            /* Escolha seu símbolo “pixelado” favorito */
+  color: #665c54;           /* Cor do símbolo */
+}
