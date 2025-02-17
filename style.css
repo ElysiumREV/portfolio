@@ -8,6 +8,13 @@ body {
   margin: 0;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
 .container {
   padding: 10px;
   display: flex;
@@ -18,12 +25,11 @@ body {
 }
 
 .main {
+  max-width: 1200px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px 15px;
-  min-width: fit-content;
-  max-width: 80%;
   flex-wrap: wrap;
   background-color: #ebdbb2;
   border: 2px solid #a89984;
@@ -48,9 +54,9 @@ body {
 .content {
   background-color: #ebdbb2;
   padding: 20px;
-  margin: 20px auto; /* Mantém um pequeno espaço no topo e embaixo */
-  width: calc(100% - 100px); /* Mantém uma margem pequena nas laterais */
-  max-width: 100%; /* Permite que ocupe toda a tela */
+  margin: 20px auto; /* Mantém centralizado */
+  width: calc(100vw - 40px); /* Usa a largura total da viewport com um pequeno espaçamento */
+  max-width: 1200px; /* Evita que fique muito grande em telas enormes */
   border: 2px solid #a89984;
   text-align: center;
 }
