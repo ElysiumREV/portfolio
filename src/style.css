@@ -1,5 +1,5 @@
-@font-face { font-family: PixelOperator; src: url('../PixelOperator8.ttf'); }
-@font-face { font-family: DigitalDisco; src: url(../DigitalDisco.ttf);}
+@font-face { font-family: PixelOperator; src: url('/src/fonts/PixelOperator8.ttf'); }
+@font-face { font-family: DigitalDisco; src: url(/src/fonts/DigitalDisco.ttf);}
 
 body {
   background-color: #282828;
