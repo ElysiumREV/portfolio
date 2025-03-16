@@ -1,18 +1,18 @@
 @font-face { font-family: PixelOperator; src: url('fonts/PixelOperator8.ttf'); }
-@font-face { font-family: DigitalDisco; src: url(fonts/DigitalDisco.ttf);}
+@font-face { font-family: DigitalDisco; src: url('fonts/DigitalDisco.ttf'); }
 
-body {
-  background-color: #282828;
-  color: #665c54;
-  font-family: PixelOperator;
-  margin: 0;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden; /* Evita rolagem horizontal */
+  overflow-x: hidden;
+  background-color: #282828;
+  color: #665c54;
+  font-family: 'PixelOperator', monospace;
 }
 
 .container {
@@ -25,6 +25,7 @@ html, body {
 }
 
 .main {
+  box-sizing: border-box;
   max-width: 1200px;
   display: flex;
   align-items: center;
@@ -47,43 +48,49 @@ html, body {
 }
 
 .pfpImg img {
-  max-width: 150px; /* Ajuste conforme necessário */
+  max-width: 150px;
   height: auto;
 }
 
 .content {
   background-color: #ebdbb2;
   padding: 20px;
-  margin: 20px auto; /* Mantém centralizado */
-  width: calc(100vw - 40px); /* Usa a largura total da viewport com um pequeno espaçamento */
-  max-width: 1200px; /* Evita que fique muito grande em telas enormes */
+  margin: 20px auto;
+  width: calc(100vw - 40px);
+  max-width: 1200px;
   border: 2px solid #a89984;
   text-align: center;
 }
 
 .contacts {
   position: fixed;
-  right: -220px; /* Começa escondido */
-  bottom: 20px; /* Mantém mais para baixo na tela */
+  right: -200px;
+  bottom: 50px;
   width: 200px;
   background-color: #ebdbb2;
   border: 2px solid #a89984;
   padding: 8px;
   transition: right 0.3s ease-in-out;
+  z-index: 999;
 }
 
 a {
   color: inherit; text-decoration: none;
 }
 
+a:hover {
+  color: #928374;
+  text-decoration: underline;
+}
+
 .contacts.open {
-  right: 0; /* Abre o pop-up */
+  right: 0; 
 }
 
 .contacts-tab {
   position: absolute;
-  left: -40px; /* Mantém a aba colada no pop-up */
-  bottom: 10px; /* Move a aba mais para baixo */
+  left: -40px; 
+  bottom: 10px;
   background-color: #a89984;
   padding: 10px;
   cursor: pointer;
@@ -106,7 +113,7 @@ button, .emailLink {
   border-radius: 5px;
   text-decoration: none;
   color: #665c54;
-  font-family: PixelOperator;
+  font-family: 'PixelOperator', monospace;
 }
 
 button:hover, .emailLink:hover {
@@ -118,14 +125,15 @@ button:hover, .emailLink:hover {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #ebdbb2; /* Cor de fundo */
-  color: #665c54; /* Cor do texto */
+  background-color: #ebdbb2;
+  color: #665c54;
   padding: 15px 30px;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+  z-index: 999;
 }
 
 .notification.show {
@@ -140,7 +148,19 @@ ul {
 }
 
 li::before {
-  content: "\25B8 "; /* "▸" em Unicode */
+  content: "\25B8 ";
   color: #665c54;
   padding-left: 5px;
+}
+
+footer {
+  background-color: #ebdbb2;
+  border: 2px solid #a89984;
+  padding: 4px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
