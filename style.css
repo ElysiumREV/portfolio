@@ -92,12 +92,15 @@ a:hover {
   left: -40px; 
   bottom: 10px;
   background-color: #a89984;
-  padding: 10px;
+  padding: 4px;
   cursor: pointer;
   writing-mode: vertical-rl;
   font-weight: bold;
   border-radius: 10px 0 0 10px;
+  font-size: 12px;
+  line-height: 1;
 }
+
 
 .emailContainer {
   display: flex;
